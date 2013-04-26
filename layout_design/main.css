@@ -9,9 +9,24 @@ div#wrap{
     overflow:auto;
 }
 div#header{
+    line-height: 15px;
     border:solid red 1px;
     height:200px;
-    margin-bottom:5px;
+    padding: 5px 5px 5px 5px;
+    position: relative;
+    font-size: 10px;
+    /*float: left;*/
+}
+div#header_image{
+    position: absolute;
+    /*float: right;*/
+}
+div#header_language{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /*float: left;*/
+    text-align: center;
 }
 div#menu{	
     height:40px;
