@@ -16,6 +16,7 @@
                     $(this).addClass('active');
                     var url_hash = $(this).find('a').attr('id');
                     window.location.hash = url_hash;
+                    loadDataByMenu(url_hash);
 
                 });
                 // all method in this file
@@ -26,7 +27,8 @@
                     }
                 }
                 function loadDataByMenu(hash){
-                    switch(hash){
+                    if(hash){
+                        switch(hash){
                         case 'home' :
                             loadData(hash);
                             break;
@@ -42,7 +44,13 @@
                         default :
                             loadData(hash);    
                             break;
+                        }
+                    }else{
+                        loadData('home');
                     }
+                }
+                function loadData(hash){
+                       $('div#content_left').html(hash);  
                 }
                 function refresh() {
                     if(hash_value){
@@ -63,6 +71,7 @@
                     }else{
                         selecetMenuAfterRefresh('home');
                     }
+                    loadDataByMenu(hash_value);
                 }
                 function selecetMenuAfterRefresh(hash) {
                     if (hash) {
