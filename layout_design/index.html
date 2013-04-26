@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script src="jquery-1.9.1.min.js" type="text/javascript" ></script>
+        <link rel="stylesheet" href="main.css" />
+        <script>
+            $(document).ready(function() {
+                var menu_items = $("div#menu ul#menu_item li");
+                $(menu_items).click(function() {
+                    $('div#menu ul#menu_item li').removeClass('active');
+                    $(this).addClass('active');
+                    var url_hash = $(this).find('a').attr('id');
+                    window.location.hash = url_hash;
+
+                });
+
+                function refresh(url_hash) {
+                    switch (url_hash) {
+                        case '#home' :
+                            alert(url_hash);
+                            break;
+                        case '#service' :
+                            alert(url_hash);
+                            break;
+                        case '#contact' :
+                            alert(url_hash);
+                            break;
+                        case '#about' :
+                            alert(url_hash);
+                            break;
+
+                    }
+                }
+            });
+        </script>    
+    </head>
+    <body>
+        <div id="wrap">
+
+            <div id="header">Header</div>
+            <div id="menu">
+                <ul id="menu_item">
+                    <li><a id="home" >Home</a></li>
+                    <li><a id="service" >Service</a></li>
+                    <li><a id="contact" >Contact</a></li>
+                    <li><a id="about" >About</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <div id="content_left">Left</div>
+                <div id="content_right">Right</div>
+            </div>
+
+        </div>
+        <div id="footer">Footer</div>
+    </body>
+</html>
