@@ -4,30 +4,74 @@
         <link rel="stylesheet" href="main.css" />
         <script>
             $(document).ready(function() {
+                // declare variable
                 var menu_items = $("div#menu ul#menu_item li");
+                var hash_value = null;
+                // initialize data
+                initData();
+                refresh(hash_value);
+                // work with event
                 $(menu_items).click(function() {
-                    $('div#menu ul#menu_item li').removeClass('active');
+                    $(menu_items).removeClass('active');
                     $(this).addClass('active');
                     var url_hash = $(this).find('a').attr('id');
                     window.location.hash = url_hash;
 
                 });
-
-                function refresh(url_hash) {
-                    switch (url_hash) {
-                        case '#home' :
-                            alert(url_hash);
+                // all method in this file
+                function initData(){
+                    if(window.location.hash){
+                        hash_value = window.location.hash.split('#');
+                        hash_value = hash_value[1];
+                    }
+                }
+                function loadDataByMenu(hash){
+                    switch(hash){
+                        case 'home' :
+                            loadData(hash);
                             break;
-                        case '#service' :
-                            alert(url_hash);
+                        case 'service' :
+                            loadData(hash);
                             break;
-                        case '#contact' :
-                            alert(url_hash);
+                        case 'contact' :
+                            loadData(hash);
                             break;
-                        case '#about' :
-                            alert(url_hash);
+                        case 'about' :
+                            loadData(hash);
                             break;
-
+                        default :
+                            loadData(hash);    
+                            break;
+                    }
+                }
+                function refresh() {
+                    if(hash_value){
+                        switch(hash_value){
+                        case 'home' :
+                            selecetMenuAfterRefresh(hash_value);
+                            break;
+                        case 'service' :
+                            selecetMenuAfterRefresh(hash_value);
+                            break;
+                        case 'contact' :
+                            selecetMenuAfterRefresh(hash_value);
+                            break;
+                        case 'about' :
+                            selecetMenuAfterRefresh(hash_value);
+                            break;
+                        }
+                    }else{
+                        selecetMenuAfterRefresh('home');
+                    }
+                }
+                function selecetMenuAfterRefresh(hash) {
+                    if (hash) {
+                        $(menu_items).removeClass('active');
+                        $(menu_items).each(function() {
+                            if ($(this).find('a').attr('id') === hash) {
+                                $(this).addClass('active');
+                            }
+                        });
                     }
                 }
             });
