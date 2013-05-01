@@ -1,0 +1,95 @@
+/* 
+    Document   : layout_one
+    Created on : Apr 28, 2013, 6:42:17 PM
+    Author     : f
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    margin: 0;
+    padding:0;
+}
+.wrap{
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+.header,.menu,.container{
+    margin:0 auto;
+    width: 1000px;
+    text-align: left;
+} 
+.header{
+    border: solid red 1px;
+    height: 250px;
+    
+    
+}
+.menu{
+    border: solid red 1px;
+    height: 30px;
+    
+}
+.menu ul.menu_items{
+    height: 30px;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+.menu ul.menu_items li.menu_item{
+    cursor: pointer;
+    float:left;
+    text-align:center;
+    display:inline-block;
+}
+.menu ul.menu_items li.menu_item:hover{
+    background-color: aqua;
+}
+
+.menu ul.menu_items li.menu_item a{
+    margin:2px 5px 1px 5px;
+    display:block;
+    width:80px;
+    text-decoration:none;
+    color:black;
+    font-size:12px;
+    line-height:27px;
+}
+.container{
+    
+    border: solid red 1px;
+    height: 900px;
+    margin-bottom: 80px;
+    
+}
+.container .container_left{
+    float: left;
+    border: solid coral 1px;
+    width: 743px;
+    height: 896px;
+    margin: 1px 1px 1px 1px;
+}
+.container .container_right{
+    float: left;
+    border: solid darkturquoise 1px;
+    width: 249px;
+    margin: 1px 1px 1px 1px;
+}
+.footer{
+    display: block;
+    position: fixed;
+    bottom:0;
+    left:0;
+    height: 80px;
+    width:100%;
+    background-color: #CCCCCC;
+    
+    
+}
+.active{
+
+    background-color: aqua;
+    
+}
